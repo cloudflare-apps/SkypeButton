@@ -1,6 +1,14 @@
 window.SkypeButton = {
   init: function(container, options) {
+    var setupOnce = false;
+
     var setupButton = function() {
+      if (setupOnce) {
+        return;
+      } else {
+        setupOnce = true;
+      }
+
       var skypeOptions = {};
 
       if (options.functions.length === 1) {
@@ -28,11 +36,13 @@ window.SkypeButton = {
     var head = document.getElementsByTagName('head')[0];
     var script= document.createElement('script');
     script.type= 'text/javascript';
-    script.onreadystatechange= function () {
-      if (this.readyState == 'complete') setupButton();
+    script.onreadystatechange = function () {
+      if (this.readyState == 'complete') {
+        setupButton();
+      }
     }
-    script.onload= helper;
-    script.src= 'helper.js';
+    script.onlaod = setupButton;
+    script.src = 'http://www.skypeassets.com/i/scom/js/skype-uri.js';
     head.appendChild(script);
   }
 };
