@@ -1,0 +1,64 @@
+{
+  "resources": {
+    "body": [
+      {
+        "type": "script",
+        "src": "./skype-button.js"
+      },
+      {
+        "type": "script",
+        "contents": "SkypeButton.init(Eager.createElement(EAGER_OPTIONS.container), EAGER_OPTIONS)"
+      }
+    ]
+  },
+  "options": {
+    "properties": {
+      "username": {
+        "title": "Skype Name",
+        "type": "string"
+      },
+      "functions": {
+        "title": "Choose what you'd like your button to do",
+        "description": "Please select at least one of the following.",
+        "type": "array",
+        "items": {
+          "enum": [
+            "Call",
+            "Chat"
+          ]
+        }
+      },
+      "imageColor": {
+        "title": "Color",
+        "type": "string",
+        "enum": [
+          "blue",
+          "white"
+        ],
+        "enumNames": {
+          "blue": "Blue",
+          "white": "White"
+        },
+        "default": "blue"
+      },
+      "imageSize": {
+        "title": "Size",
+        "type": "string",
+        "enum": [
+          "10px",
+          "12px",
+          "14px",
+          "16px",
+          "24px",
+          "32px"
+        ],
+        "default": "32px"
+      },
+      "container": {
+        "title": "Location where the button will appear",
+        "type": "object",
+        "format": "element"
+      }
+    }
+  }
+}
