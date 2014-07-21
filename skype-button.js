@@ -41,7 +41,7 @@ window.SkypeButton = {
         setupButton();
       }
     }
-    script.onlaod = setupButton;
+    script.onload = setupButton;
     script.src = 'http://www.skypeassets.com/i/scom/js/skype-uri.js';
     head.appendChild(script);
   }
