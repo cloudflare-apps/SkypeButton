@@ -10,9 +10,14 @@ window.SkypeButton = {
       return;
     }
 
+    // Skype requires a div
+    var div = document.createElement('div');
+    container.appendChild(div);
+
+    // And requires its ID has "SkypeButton" in it
     var elementId = 'SkypeButton_Call_' + options.username + '_' + Math.floor(Math.random() * 999999);
+    div.id = elementId;
     skypeOptions.element = elementId;
-    container.id = elementId;
 
     skypeOptions.participants = [options.username];
     skypeOptions.imageSize = parseInt(options.imageSize, 10);
