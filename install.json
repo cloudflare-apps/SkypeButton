@@ -33,7 +33,7 @@
           "call": "Calls",
           "chat": "Chat"
         },
-        "default": "call-and-chat"
+        "default": "dropdown"
       },
       "imageColor": {
         "order": 3,
