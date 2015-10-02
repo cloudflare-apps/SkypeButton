@@ -61,7 +61,7 @@
           "24px",
           "32px"
         ],
-        "default": "32px"
+        "default": "24px"
       },
       "container": {
         "order": 5,
