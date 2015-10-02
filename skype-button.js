@@ -2,14 +2,6 @@ window.SkypeButton = {
   init: function(container, options) {
     var skypeOptions = {};
 
-    if (options.functions.length === 1) {
-      skypeOptions.name = options.functions[0].toLowerCase();
-    } else if (options.functions.length === 2) {
-      skypeOptions.name = 'dropdown';
-    } else {
-      return;
-    }
-
     // Skype requires a div
     var div = document.createElement('div');
     container.appendChild(div);
@@ -19,6 +11,7 @@ window.SkypeButton = {
     div.id = elementId;
     skypeOptions.element = elementId;
 
+    skypeOptions.name = options.functions;
     skypeOptions.participants = [options.username];
     skypeOptions.imageSize = parseInt(options.imageSize, 10);
 
@@ -45,9 +38,13 @@ window.SkypeButton = {
       if (this.readyState == 'complete') {
         setupButton();
       }
-    }
+    };
     script.onload = setupButton;
-    script.src = 'http://www.skypeassets.com/i/scom/js/skype-uri.js';
+    if (window.location.protocol !== 'https:') {
+      script.src = 'https://secure.skypeassets.com/i/scom/js/skype-uri.js';
+    } else {
+      script.src = 'http://www.skypeassets.com/i/scom/js/skype-uri.js';
+    }
     head.appendChild(script);
   }
 };

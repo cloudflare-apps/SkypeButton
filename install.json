@@ -14,21 +14,29 @@
   "options": {
     "properties": {
       "username": {
-        "title": "Skype Name",
+        "order": 1,
+        "title": "Skype Username",
         "type": "string"
       },
       "functions": {
-        "title": "Choose what you'd like your button to do",
-        "description": "Please select at least one of the following.",
-        "type": "array",
-        "items": {
-          "enum": [
-            "Call",
-            "Chat"
-          ]
-        }
+        "order": 2,
+        "title": "Choose what you’d like the button to initate",
+        "type": "string",
+        "format": "radios",
+        "enum": [
+          "dropdown",
+          "call",
+          "chat"
+        ],
+        "enumNames": {
+          "dropdown": "Calls or chat",
+          "call": "Calls",
+          "chat": "Chat"
+        },
+        "default": "call-and-chat"
       },
       "imageColor": {
+        "order": 3,
         "title": "Color",
         "type": "string",
         "enum": [
@@ -42,6 +50,7 @@
         "default": "blue"
       },
       "imageSize": {
+        "order": 4,
         "title": "Size",
         "type": "string",
         "enum": [
@@ -55,6 +64,7 @@
         "default": "32px"
       },
       "container": {
+        "order": 5,
         "title": "Location where the button will appear",
         "type": "object",
         "format": "element"
