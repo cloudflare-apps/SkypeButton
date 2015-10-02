@@ -40,7 +40,7 @@ window.SkypeButton = {
       }
     };
     script.onload = setupButton;
-    if (window.location.protocol !== 'https:') {
+    if (window.location.protocol === 'https:') {
       script.src = 'https://secure.skypeassets.com/i/scom/js/skype-uri.js';
     } else {
       script.src = 'http://www.skypeassets.com/i/scom/js/skype-uri.js';
